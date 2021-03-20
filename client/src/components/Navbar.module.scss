@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 1.5rem;
+    background-color: steelblue;
+
+    ul {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+}
+
+.activeLink {
+    color: darken(white, 15%);
+}

@@ -1,0 +1,17 @@
+.homeHeader {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        margin-left: 2rem;
+        align-self: center;
+
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+.dashboard {
+    padding: 3rem;
+    display: flex;
+}
+
+.dashMain {
+    width: 75%;
+    order: 2;
+    padding-left: 1.5rem;
+
+    header {
+        margin-bottom: 2rem;
+    }
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+    button {
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+}
+
+
+.sidebar {
+    width: 25%;
+    height: 80vh;
+    order: 1;
+    border-right: 1px solid lightgray;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .sideLink {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 0.75rem 0 0.75rem 0.25rem;
+
+            button {
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+        .sideLink:hover {
+            cursor: pointer;
+            background-color: lightgray;
+        }
+    }
+}
+
+
+// Modal for creating Board
+.newBoardModal {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    width: 50%;
+    min-height: 25%;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgb(78, 164, 218);
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // opacity: 0;
+    margin-top: -100px;
+    // animation: 1s modalslide 0.5s forwards;
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    button {
+        margin-left: 1rem;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+    }
+}
+// @keyframes modalslide {
+//     100% {
+//         margin-top: 0;
+//         opacity: 1;
+//     }
+// }
