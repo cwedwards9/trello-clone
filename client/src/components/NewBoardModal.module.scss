@@ -1,0 +1,66 @@
+// Modal for creating Board
+.newBoardModal {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    width: 50%;
+    min-height: 25%;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgb(78, 164, 218);
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // opacity: 0;
+    margin-top: -100px;
+    animation: 1s modalslide 0.5s forwards;
+
+    h2 {
+        font-size: 1.5rem;
+        color: white;
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+// @keyframes modalslide {
+//     100% {
+//         margin-top: 0;
+//         opacity: 1;
+//     }
+// }
+
+.newBoardForm {
+    button {
+        margin-left: 1rem;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+    }
+
+    div {
+        margin-bottom: 1rem;
+
+        label {
+            margin-bottom: 0.40rem;
+            display: block;
+            color: white;
+        }
+
+        input {
+            padding: 0.25rem;
+            width: 100%;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+    }
+
+    .modalBtn {
+        width: 50%;
+        margin: 2rem auto 0;
+    }
+}
