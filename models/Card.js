@@ -16,5 +16,13 @@ module.exports = (sequelize, DataTypes) => {
         freezeTableName: true
     });
 
+    Card.associate = (models) => {
+        Card.belongsTo(models.List, {
+            foreign: {
+                allowNull: false
+            }
+        });
+    };
+
     return Card;
 }

@@ -12,5 +12,11 @@ module.exports = (sequelize, DataTypes) => {
         freezeTableName: true
     });
 
+    List.associate = (models) => {
+        List.hasMany(models.Card, {
+            onDelete: "cascade"
+        });
+    };
+
     return List;
 }
