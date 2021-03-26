@@ -5,7 +5,10 @@ export default function useInputState(initialVal) {
     const handleChange = (e) => {
         setState(e.target.value);
     };
+    const reset = () => {
+        setState("");
+    }
     
 
-    return [state, handleChange];
+    return [state, handleChange, reset];
 }
