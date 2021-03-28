@@ -3,7 +3,8 @@ const cardsController = require("../controllers/cardsController");
 
 
 router.route("/cards")
-    .post(cardsController.create);
+    .post(cardsController.create)
+    .put(cardsController.update);
 
 
 module.exports = router;
