@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
   findAll: async (req, res) => {
-    const getLists = await db.List.findAll({ include: db.Card });
+    const getLists = await db.List.findAll({ where: { BoardId: req.params.boardId }, include: db.Card });
     res.json({ listData: getLists });
   },
   create: async (req, res) => {
