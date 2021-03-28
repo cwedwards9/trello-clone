@@ -16,6 +16,12 @@ module.exports = (sequelize, DataTypes) => {
         List.hasMany(models.Card, {
             onDelete: "cascade"
         });
+
+        List.belongsTo(models.Board, {
+            foreign: {
+                allowNull: false
+            }
+        });
     };
 
     return List;
