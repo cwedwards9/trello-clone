@@ -1,0 +1,53 @@
+%cardContainer {
+    background-color: #F4F5F7;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %cardContainer;
+
+    p {
+        margin: 0;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.cardEditForm {
+    margin-bottom: 1rem;
+    
+    input {
+        @extend %cardContainer;
+        border: 1px solid #61BD4F;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@mixin cardBtn($btnColor) {
+    background-color: $btnColor;
+    color: white;
+    border: 1px solid $btnColor;
+    border-radius: 3px;
+    margin-right: 0.25rem;
+    padding: 0.40rem 0.5rem;
+    cursor: pointer;
+}
+
+.cardUpdateBtn {
+    @include cardBtn(#61BD4F);
+}
+
+.cardCancelBtn {
+    @include cardBtn(#E35D6A);
+}
