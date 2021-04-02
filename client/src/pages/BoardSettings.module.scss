@@ -1,0 +1,20 @@
+.settingsContainer {
+    padding: 2rem 3rem;
+}
+
+.settingsHeader {
+    h1 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0.5rem 0;
+    }
+}
+
+.boardSettingsList {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
