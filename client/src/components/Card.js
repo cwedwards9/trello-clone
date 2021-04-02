@@ -18,8 +18,29 @@ export default function Card(props) {
             });
     }
 
+    const dragStart = (e) => {
+        const target = e.target;
+
+        e.dataTransfer.setData("cardId", target.id);
+
+        setTimeout(() => {
+            target.style.display = "none";
+        }, 0);
+    }
+
+    const dragOver = (e) => {
+        e.stopPropagation();
+    }
+
     return (
-        <>
+        <div
+            id={props.card.id}
+            className={cardStyles.entireCard}
+            onDragStart={dragStart} 
+            onDragOver={dragOver} 
+            draggable="true"
+            desc={cardDesc}
+        >
             {
                 isCardEditForm ?
                 <form onSubmit={updateCard} className={cardStyles.cardEditForm}>
@@ -28,11 +49,11 @@ export default function Card(props) {
                     <button className={cardStyles.cardCancelBtn} onClick={cardEditToggle}>Cancel</button>
                 </form>
                 :
-                <div className={cardStyles.card}>
+                <div className={cardStyles.card} >
                     <p>{cardDesc}</p>
                     <button onClick={cardEditToggle}><BiPencil /></button>
                 </div>
             }
-        </>
+        </div>
     );
 }
