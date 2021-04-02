@@ -1,0 +1,87 @@
+%boardSettingsContainer {
+    width: 45%;
+    min-height: 150px;
+    padding: 0.5rem 1rem;
+    // border: 1px solid lightgray;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.2), 0 15px 8px rgba(0, 0, 0, 0.1);
+    border-left: 10px solid #5D80B0;
+}
+
+.boardEditForm {
+    @extend %boardSettingsContainer;
+    
+    div {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    input, textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.boardSettingsCard {
+    @extend %boardSettingsContainer;
+    display: grid;
+    grid-template-areas: 
+    "title btns"
+    "info info";
+
+    .boardSettingsTitle {
+        grid-area: title;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        h2 {
+            margin: 0 0.5rem 0 0;
+            a {
+                color: #0366D6;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            
+        }
+
+        button {
+            margin-top: 0.25rem;
+            background-color: transparent;
+            font-size: 1.25rem;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .boardSettingsBtns {
+        grid-area: btns;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        button {
+            margin-left: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    .boardSettingsInfo {
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0.25rem 0;
+        }
+    }
+}
