@@ -1,9 +1,13 @@
 %cardContainer {
-    background-color: #F4F5F7;
+    background-color: #FFFFFF;
     padding: 0.5rem;
     border-radius: 4px;
     margin-bottom: 0.5rem;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.entireCard {
+    cursor: grab;
 }
 
 .card {
@@ -14,12 +18,18 @@
 
     p {
         margin: 0;
+        font-size: 1rem;
     }
 
     button {
+        padding: 0.25rem;
         background-color: transparent;
         border: none;
         cursor: pointer;
+    }
+    button:hover {
+        background-color: #EBECF0;
+        border-radius: 10px;
     }
 }
 
