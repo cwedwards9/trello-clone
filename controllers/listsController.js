@@ -8,5 +8,17 @@ module.exports = {
   create: async (req, res) => {
     const newList = await db.List.create(req.body);
     res.json(newList.dataValues);
+  },
+  update: async (req, res) => {
+    await db.List.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    });
+    res.end();
+  },
+  delete: async (req, res) => {
+    await db.List.destroy({ where: { id: req.params.listId } });
+    res.end();
   }
 };

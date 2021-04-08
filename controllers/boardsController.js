@@ -12,5 +12,14 @@ module.exports = {
   create: async (req, res) => {
     const newBoard = await db.Board.create(req.body);
     res.json(newBoard.dataValues);
+  },
+  update: async (req, res) => {
+    console.log(req.body);
+    await db.Board.update(req.body, { where: { id: req.params.id } });
+    res.end();
+  },
+  delete: async (req, res) => {
+    await db.Board.destroy({ where: { id: req.params.id } });
+    res.end();
   }
 };
