@@ -6,11 +6,11 @@ module.exports = {
     res.json(newCard);
   },
   update: async (req, res) => {
-    await db.Card.update(req.body, {
+    const updatedCard = await db.Card.update(req.body, {
       where: {
         id: req.body.id
       }
     });
-    res.end();
+    res.json(updatedCard);
   }
 };
