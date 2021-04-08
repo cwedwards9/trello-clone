@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import useInputState from "../hooks/useInputState";
 import useToggle from "../hooks/useToggle";
 import List from "../components/List";
@@ -13,6 +14,7 @@ export default function Board() {
     const [boardInfo, setBoardInfo] = useState("");
     const [newListTitle, updateListTitle, resetListTitle] = useInputState("");
     const [isStarred, toggleStarStatus] = useToggle(false);
+    const [addListBtn, toggleAddListBtn] = useToggle(false);
 
     useEffect(() => {
         axios.get(`/api/boards/${boardId}`)
@@ -39,6 +41,14 @@ export default function Board() {
             })
     };
 
+    const deleteList = (id) => {
+        axios.delete(`/api/lists/${id}`)
+            .then(() => {
+                const updatedList = listArray.filter(list => list.id !== id);
+                setListArray(updatedList);
+            })
+    }
+
     const toggleBoardStarStatus = () => {
         axios.put(`/api/boards/${boardId}`, { isStarred: !isStarred })
             .then(() => {
@@ -47,29 +57,35 @@ export default function Board() {
     }
 
     return (
-        <>
+        <div className={boardStyles.boardPage}>
         <header className={boardStyles.boardHeader}>
             <h1>{boardInfo.name}</h1>
             { isStarred ? <button style={{ color: "yellow"}} onClick={toggleBoardStarStatus}><AiFillStar /></button> 
-                : <button onClick={toggleBoardStarStatus}><AiOutlineStar /></button> 
+                : <button style={{ color: "white"}} onClick={toggleBoardStarStatus}><AiOutlineStar /></button> 
             }
-            <p>Board Settings</p>
+            <Link to="/board-settings" className={boardStyles.settingsLink}>Board Settings</Link>
         </header>
         <main className={boardStyles.mainBoard}>
             {listArray.map(list => (
                 <List 
                     key={list.id}
                     list={list}
+                    deleteList={deleteList}
                 />
             ))}
 
             <section className={boardStyles.addListForm}>
                 <form onSubmit={createList}>
-                    <input value={newListTitle} onChange={updateListTitle} placeholder="+ Add another list" />
-                    <button>Add List</button>
+                    <input value={newListTitle} onChange={updateListTitle} onFocus={toggleAddListBtn} onBlur={toggleAddListBtn} placeholder="+ Add another list" />
+                    {
+                        addListBtn ?
+                            <button>Add List</button>
+                        :
+                            null
+                    }
                 </form>
             </section>
         </main>
-        </>
+        </div>
     );
 };
