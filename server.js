@@ -4,6 +4,7 @@ const userRoutes = require("./routes/users");
 const boardRoutes = require("./routes/boards");
 const listRoutes = require("./routes/lists");
 const cardRoutes = require("./routes/cards");
+const imagesRoute = require("./routes/bgImages");
 
 // Require database models
 const db = require("./models");
@@ -16,6 +17,7 @@ app.use("/api", userRoutes);
 app.use("/api", boardRoutes);
 app.use("/api", listRoutes);
 app.use("/api", cardRoutes);
+app.use("/api", imagesRoute);
 
 const PORT = process.env.PORT || 3001;
 
