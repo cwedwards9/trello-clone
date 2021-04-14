@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
+        bgImage: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         isStarred: {
             type: DataTypes.BOOLEAN,
             allowNull: false
