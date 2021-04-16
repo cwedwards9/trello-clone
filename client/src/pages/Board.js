@@ -65,7 +65,7 @@ export default function Board() {
             }
             <Link to="/board-settings" className={boardStyles.settingsLink}>Board Settings</Link>
         </header>
-        <main className={boardStyles.mainBoard}>
+        <main className={boardStyles.mainBoard} style={{backgroundImage: `url(${boardInfo.bgImage})`}}>
             {listArray.map(list => (
                 <List 
                     key={list.id}
@@ -76,7 +76,7 @@ export default function Board() {
 
             <section className={boardStyles.addListForm}>
                 <form onSubmit={createList}>
-                    <input value={newListTitle} onChange={updateListTitle} onFocus={toggleAddListBtn} onBlur={toggleAddListBtn} placeholder="+ Add another list" />
+                    <input value={newListTitle} onChange={updateListTitle} onFocus={toggleAddListBtn} placeholder="+ Add another list" />
                     {
                         addListBtn ?
                             <button>Add List</button>
