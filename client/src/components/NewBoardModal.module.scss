@@ -2,65 +2,96 @@
 .newBoardModal {
     display: flex;
     flex-direction: column;
-    // align-items: center;
-    width: 50%;
-    min-height: 25%;
-    padding: 1rem;
-    border: 1px solid black;
+    width: 40%;
+    padding: 0.75rem;
+    border-radius: 5px;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
-    background-color: rgb(78, 164, 218);
+    background-color: #026AA7;
     z-index: 1000;
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    // opacity: 0;
     margin-top: -100px;
-    animation: 1s modalslide 0.5s forwards;
-
+    
     h2 {
         font-size: 1.5rem;
         color: white;
-        margin: 1rem 0;
+        margin: 0 0 0.75rem;
         text-align: center;
     }
 }
-// @keyframes modalslide {
-//     100% {
-//         margin-top: 0;
-//         opacity: 1;
-//     }
-// }
 
-.newBoardForm {
+.textInputs {
+    margin-bottom: 0.5rem;
+
+    label {
+        margin-bottom: 0.40rem;
+        display: block;
+        color: white;
+    }
+
+    input {
+        padding: 0.25rem;
+        width: 100%;
+        font-size: 1rem;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+#checkbox {
+    input {
+        margin-right: 0.5rem;
+    }
+
+    label {
+        color: white;
+    }
+}
+
+
+.backgroundSelect {
+    margin-top: 1rem;
+    color: white;
+}
+
+.backgroundBtns {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem;
+
+    li {
+        display: inline;
+        margin-right: 0.5rem;
+
+        button {
+            width: 3rem;
+            height: 3rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+
+
+.modalBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+    
     button {
-        margin-left: 1rem;
+        margin: 0 1rem;
         border: none;
         padding: 0.5rem 1.5rem;
         border-radius: 5px;
         color: black;
         cursor: pointer;
-    }
-
-    div {
-        margin-bottom: 1rem;
-
-        label {
-            margin-bottom: 0.40rem;
-            display: block;
-            color: white;
-        }
-
-        input {
-            padding: 0.25rem;
-            width: 100%;
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
-    }
-
-    .modalBtn {
-        width: 50%;
-        margin: 2rem auto 0;
     }
 }

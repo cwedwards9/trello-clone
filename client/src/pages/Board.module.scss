@@ -17,12 +17,12 @@
 }
 .boardPage::-webkit-scrollbar-thumb {
 	border-radius: 10px;
-	background-color: rgb(231, 231, 231);
+	background-color: rgb(255, 255, 255);
 }
 
 
 .boardHeader {
-    height: 50px;
+    height: 45px;
     display: flex;
     align-items: center;
     background-color: #10488C;
@@ -65,8 +65,11 @@
     justify-content: flex-start;
     align-items: start;
     height: 100%;
-    width: 100%;
-    padding: 8rem 1rem 0;
+    min-width: 110%;
+    padding: 7rem 0.75rem 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .addListForm {
