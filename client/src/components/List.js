@@ -6,13 +6,14 @@ import useToggle from "../hooks/useToggle";
 import axios from "axios";
 import listStyles from "./List.module.scss";
 import { BsThreeDots } from "react-icons/bs";
+import { FaWindowMinimize } from "react-icons/fa"
 
 
 export default function List(props) {
     const [newCardDesc, updateCardDesc, resetCardDesc] = useInputState("");
     const [listCards, setListCards] = useState(props.list.Cards || []);
     const [listModal, toggleListModal] = useToggle(false);
-    const [listTitle, updateListTitle] = useInputState(props.list.listTitle)
+    const [listTitle, updateListTitle] = useInputState(props.list.listTitle);
     const [isEditingListTitle, toggleEditListTitle] = useToggle(false);
     const [addCardBtn, toggleAddCardBtn] = useToggle(false);
 
@@ -57,7 +58,7 @@ export default function List(props) {
     }
 
     const inputFocus = () => {
-        document.querySelector(".newCardInput").focus();
+        document.querySelector(`#newCardInput-${props.list.id}`).focus();
     }
 
     return (
@@ -87,10 +88,13 @@ export default function List(props) {
             </div>
             
             <form onSubmit={createCard} className={listStyles.newCardForm}>
-                <input value={newCardDesc} onChange={updateCardDesc} onFocus={toggleAddCardBtn} onBlur={toggleAddCardBtn} placeholder="+ Add another card" />
+                <input value={newCardDesc} onChange={updateCardDesc} onFocus={toggleAddCardBtn} placeholder="+ Add another card" id={`newCardInput-${props.list.id}`} />
                 {
                     addCardBtn ?
-                        <button>Add Card</button>
+                        <div>
+                            <button>Add Card</button>
+                            <button type="button" onClick={toggleAddCardBtn}><FaWindowMinimize /> </button>
+                        </div>
                     :
                         null
                 }
