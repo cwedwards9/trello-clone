@@ -17,10 +17,10 @@ export default function EditListModal(props) {
                 <li onClick={function() {props.toggleListModal(); props.inputFocus();}}>Add card...</li>
                 <li onClick={function() {props.toggleListModal(); props.toggleEditListTitle();}}>Rename list...</li>
                 {isDeleteMsg ?
-                    <li>Confirm list deletion?
-                        <span className={editListStyles.deleteButtons}>
-                            <button onClick={props.handleDelete}>Yes</button>
-                            <button onClick={toggleDeleteMsg}>No</button>
+                    <li>Confirm list deletion:
+                        <span className={editListStyles.confirmDeletebtns}>
+                            <button onClick={props.handleDelete} className={editListStyles.deleteBtn}>Delete</button>
+                            <button onClick={toggleDeleteMsg} className={editListStyles.cancelBtn}>Cancel</button>
                         </span>
                     </li>
                     :
