@@ -3,6 +3,7 @@ import useToggle from "../hooks/useToggle";
 import useInputState from "../hooks/useInputState";
 import modalStyles from "./NewBoardModal.module.scss";
 import axios from "axios";
+import { ImCross } from "react-icons/im"
 
 export default function NewBordModal({ toggleModal, createBoard }) {
     const [boardName, updateName, resetBoardName] = useInputState("");
@@ -32,15 +33,19 @@ export default function NewBordModal({ toggleModal, createBoard }) {
 
     return (
         <div className={modalStyles.newBoardModal}>
-            <h2>Create New Board</h2>
+            <div className={modalStyles.modalHeading}>
+                <h3>Create New Board</h3>
+                <button onClick={toggleModal}><ImCross /></button>
+            </div>
+            <hr />
             <form onSubmit={handleSubmit}>
                 <div className={modalStyles.textInputs}>
                     <label htmlFor="boardName">Board Name:</label>
-                    <input type="text" id="boardName" value={boardName} onChange={updateName} />
+                    <input type="text" id="boardName" value={boardName} onChange={updateName} required />
                 </div>
                 <div className={modalStyles.textInputs}>
                     <label htmlFor="boardDesc">Description:</label>
-                    <input type="text" id="boardDesc" value={boardDesc} onChange={updateDesc} />
+                    <input type="text" id="boardDesc" value={boardDesc} onChange={updateDesc} required />
                 </div>
                 <div className={modalStyles.backgroundSelect}>
                     <label htmlFor="bg-select">Choose a background:</label>
@@ -57,10 +62,8 @@ export default function NewBordModal({ toggleModal, createBoard }) {
                     <input type="checkbox" id="starred" name="starred" value="starred" onChange={toggleStarred} />
                     <label htmlFor="starred">Starred Project</label>
                 </div>
-                <div className={modalStyles.modalBtn}>
-                    <button>Create</button>
-                    <button onClick={toggleModal}>Cancel</button>
-                </div>
+                
+                <button className={modalStyles.modalBtn}>Create</button>
             </form>
         </div>
     );
