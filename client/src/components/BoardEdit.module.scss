@@ -1,10 +1,23 @@
 %boardSettingsContainer {
     width: 45%;
-    min-height: 150px;
+    margin-bottom: 2rem;
+    min-height: 175px;
     padding: 0.5rem 1rem;
-    // border: 1px solid lightgray;
+    background-color: white;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.2), 0 15px 8px rgba(0, 0, 0, 0.1);
-    border-left: 10px solid #5D80B0;
+    border-radius: 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+%boardEditText {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    border: none;
+    border-radius: 4px;
 }
 
 .boardEditForm {
@@ -19,9 +32,24 @@
         margin-bottom: 0.25rem;
     }
 
-    input, textarea {
-        width: 100%;
-        box-sizing: border-box;
+    input {
+        @extend %boardEditText;
+        height: 1.75rem;
+    }
+
+    textarea {
+        @extend %boardEditText;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    button {
+        margin-right: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        border: none;
+        border-radius: 4px;
+        background-color: white;
+        color: black;
+        cursor: pointer;
     }
 }
 
@@ -40,8 +68,9 @@
 
         h2 {
             margin: 0 0.5rem 0 0;
+            font-size: 1.25rem;
             a {
-                color: #0366D6;
+                color: white;
                 text-decoration: none;
             }
             a:hover {
@@ -83,5 +112,66 @@
         p {
             margin: 0.25rem 0;
         }
+    }
+}
+
+.deleteBoardModal {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h3 {
+        margin: 0;
+        text-align: center;
+    }
+
+    hr {
+        width: 100%
+    }
+
+    p {
+        margin: 0 0 1rem;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        margin: 0 0.5rem;
+        border: 1px solid lightgray;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        background-color: white;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: rgb(238, 238, 238);
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    %boardSettingsContainer {
+        width: 100%;
+    }
+    .deleteBoardModal {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .deleteBoardModal {
+        width: 60%;
     }
 }

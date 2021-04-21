@@ -2,23 +2,38 @@
 .newBoardModal {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 25%;
     padding: 0.75rem;
     border-radius: 5px;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
-    background-color: #026AA7;
+    background-color: #ffffff;
     z-index: 1000;
     position: fixed;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: -100px;
     
-    h2 {
-        font-size: 1.5rem;
-        color: white;
-        margin: 0 0 0.75rem;
+    h3 {
+        margin: 0;
         text-align: center;
+    }
+
+    hr {
+        width: 100%
+    }
+}
+
+.modalHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        background-color: transparent;
+        border: none;
+        padding-top: 0.35rem;
+        font-size: 0.75rem;
+        cursor: pointer;
     }
 }
 
@@ -28,7 +43,6 @@
     label {
         margin-bottom: 0.40rem;
         display: block;
-        color: white;
     }
 
     input {
@@ -36,7 +50,7 @@
         width: 100%;
         font-size: 1rem;
         box-sizing: border-box;
-        border: none;
+        border: 1px solid lightgray;
         border-radius: 5px;
     }
 }
@@ -45,16 +59,11 @@
     input {
         margin-right: 0.5rem;
     }
-
-    label {
-        color: white;
-    }
 }
 
 
 .backgroundSelect {
     margin-top: 1rem;
-    color: white;
 }
 
 .backgroundBtns {
@@ -64,7 +73,7 @@
 
     li {
         display: inline;
-        margin-right: 0.5rem;
+        margin: 0 0.15rem;
 
         button {
             width: 3rem;
@@ -79,19 +88,22 @@
     }
 }
 
-
-
 .modalBtn {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.25rem;
-    
-    button {
-        margin: 0 1rem;
-        border: none;
-        padding: 0.5rem 1.5rem;
-        border-radius: 5px;
-        color: black;
-        cursor: pointer;
+    margin-top: 1rem;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .newBoardModal {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .newBoardModal {
+        width: 75%;
     }
 }

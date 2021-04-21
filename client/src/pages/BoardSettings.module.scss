@@ -1,10 +1,13 @@
 .settingsContainer {
-    padding: 2rem 3rem;
+    padding: 5rem 3rem 3rem;
+    background-color: #EFEFF5;
+    height: 80vh;
 }
 
 .settingsHeader {
     h1 {
         margin: 0;
+        font-size: 1.5rem;
     }
 
     p {
@@ -14,7 +17,13 @@
 
 .boardSettingsList {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 2rem;
 }
 
+@media screen and (max-width: 500px) {
+    .settingsContainer {
+        padding: 5rem 1.5rem 3rem;
+    }
+}
