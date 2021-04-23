@@ -1,0 +1,103 @@
+.userLogPage {
+    padding: 4rem 0 2rem;
+}
+
+.logoName {
+    width: 50%;
+    margin: 1rem auto;
+    font-size: 2rem;
+    text-align: center;
+    color: #026AA7;
+
+    p {
+        display: inline;
+        font-weight: 700;
+        color: black;
+    }
+}
+
+.formContainer {
+    width: 25%;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        font-size: 1.25rem;
+        text-align: center;
+        margin: 0 0 1rem 0;
+        color: #5E6C84;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 0 1rem 0;
+        padding: 7px;
+        height: 40px;
+        border: 2px solid #DFE1E6;
+        border-radius: 5px;
+        background-color: #FAFBFC;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+        padding: 0.5rem 2rem;
+        margin-bottom: 1.5rem;
+        background-color: #026AA7;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    a {
+        font-size: 0.85rem;
+        color: #0052CC;
+        display: block;
+        text-align: center;
+        margin: 1.5rem 0 1rem;
+    }
+}
+
+.message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: 1rem auto;
+    padding: 0 2rem;
+    border-radius: 6px;
+    background-color: #F8D7DA;
+    color: #84204B;
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: #84204B;
+        position: relative;
+        top: 2px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .formContainer {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .formContainer {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .formContainer {
+        width: 70%;
+    }
+}
