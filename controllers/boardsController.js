@@ -6,15 +6,15 @@ module.exports = {
     res.json(oneBoard);
   },
   findAll: async (req, res) => {
-    const getBoards = await db.Board.findAll();
+    console.log(req.user);
+    const getBoards = await db.Board.findAll({ where: { UserId: req.user } });
     res.json({ boardData: getBoards });
   },
   create: async (req, res) => {
-    const newBoard = await db.Board.create(req.body);
+    const newBoard = await db.Board.create({ ...req.body, UserId: req.user });
     res.json(newBoard.dataValues);
   },
   update: async (req, res) => {
-    console.log(req.body);
     await db.Board.update(req.body, { where: { id: req.params.id } });
     res.end();
   },
