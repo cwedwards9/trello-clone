@@ -4,10 +4,19 @@
   "description": "Trello clone. Project management tool.",
   "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "concurrently": "^6.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "if-env": "^1.0.4",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.1"
+    "node-fetch": "^2.6.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.5.1",
+    "sequelize-cli": "^6.2.0",
+    "unsplash-js": "^7.0.10"
   },
   "devDependencies": {},
   "scripts": {
