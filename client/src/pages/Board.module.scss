@@ -2,8 +2,11 @@
     overflow-y: hidden;
     width: 100%;
     height: 100vh;
-    overflow-x: scroll;
+    overflow-x: auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 // Horizontal scrollbar
 .boardPage::-webkit-scrollbar-track {
@@ -65,11 +68,9 @@
     justify-content: flex-start;
     align-items: start;
     height: 100%;
-    min-width: 110%;
+    width: 100%;
     padding: 7rem 0.75rem 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    box-sizing: border-box;
 }
 
 .addListForm {

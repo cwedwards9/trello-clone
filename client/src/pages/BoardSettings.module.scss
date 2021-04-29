@@ -1,7 +1,7 @@
 .settingsContainer {
     padding: 5rem 3rem 3rem;
     background-color: #EFEFF5;
-    height: 80vh;
+    min-height: calc(100vh - 8rem);
 }
 
 .settingsHeader {
