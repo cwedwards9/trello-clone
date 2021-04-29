@@ -31,11 +31,21 @@ export default function NewBordModal({ toggleModal, createBoard }) {
         resetBoardDesc();
     }
 
+    // Add outline over selected background image - Set state to be image URL
+    const handleBoardSelect = (bgImage, evt) => {
+        const backgrounds = document.querySelector("#bg-select");
+        for(let i = 0; i < backgrounds.children.length; i++) {
+            backgrounds.children[i].children[0].style.outline = "none";
+        }
+        setBoardBg(bgImage);
+        evt.target.style.outline = "2px solid #026AA7";
+    }
+
     return (
         <div className={modalStyles.newBoardModal}>
             <div className={modalStyles.modalHeading}>
                 <h3>Create New Board</h3>
-                <button onClick={toggleModal}><ImCross /></button>
+                <button aria-label="Close" onClick={toggleModal}><ImCross /></button>
             </div>
             <hr />
             <form onSubmit={handleSubmit}>
@@ -52,7 +62,7 @@ export default function NewBordModal({ toggleModal, createBoard }) {
                     <ul id="bg-select" name="bg-image" className={modalStyles.backgroundBtns}>
                     {
                         bgImagesList.map(img => (
-                            <li key={img.urlImgMedium} value=""><button onClick={() => setBoardBg(`${img.urlImgFull}`)} type="button" 
+                            <li key={img.urlImgMedium} value=""><button onClick={(e) => handleBoardSelect(`${img.urlImgFull}`, e)} type="button" 
                             style={{backgroundImage: `url(${img.urlImgMedium})`}}></button></li>
                         ))
                     }
