@@ -1,17 +1,270 @@
+.homePage {
+    font-family: 'Montserrat', sans-serif;
+
+    h2 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+    }
+    p {
+        font-size: 1.15rem;
+        margin: 0 0 1.5rem;
+        line-height: 1.7;
+    }
+}
+
+@mixin signupBtn($bg-color, $bord-color, $color) {
+    font-family: 'Quicksand', sans-serif;
+    background-color: $bg-color;
+    border: 1px solid $bord-color;
+    color: $color;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+
 .homeHeader {
-    padding: 3rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 6rem 5rem 4rem;
+    height: calc(100vh - 10rem);
+    background-image: url(../images/home-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    div {
+        width: 50%;
+        height: 100%;
+        color: rgb(78, 103, 245);
+        
+        h1 {
+            font-size: 2.75rem;
+            margin: 0 0 0.5rem;
+        }
+
+        a {
+            @include signupBtn(#0065ff, #0065ff, white);
+            width: 35%;
+            padding: 0.5rem 1.5rem;
+            
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+    }
+}
+
+.product {
+    padding: 5rem 0 2rem;
 
     div {
-        margin-left: 2rem;
-        align-self: center;
+        width: 75%;
+        margin: 0 auto 2rem;
+        text-align: center;
 
-        h1 {
-            font-size: 3rem;
+        .link {
+            @include signupBtn(white, #0065ff, #0065ff);
+            padding: 0.5rem 1rem;
+            margin: 1rem 0 2rem;
+            transition: all 0.3s ease-in;
+
+            &:hover {
+                background-color: #0065FF;
+                color: white;
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .boardImg {
+        display: block;
+        margin: 2rem auto;
+        border-radius: 6px;
+    }
+    .companyImg {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.featuresSection {
+    padding: 3rem 5rem;
+
+    .feature {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 5rem;
+
+        div {
+            width: 50%;
+            margin: 0 1rem;
+        }
+        img {
+            width: 40%;
+            margin: 0 1rem;
+        }
+    }
+}
+
+.signUp {
+    padding: 5rem 0;
+}
+
+.signUpContainer {
+    background-image: url(../images/signup-bg2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    
+    div {
+        width: 75%;
+        margin: 0 auto;
+        text-align: center;
+
+        h3 {
+            font-size: 1.25rem;
+            color: white;
+            margin: 0 0 2.5rem;
+        }
+
+        input {
+            margin-right: 0.5rem;
+            padding: 0.5rem;
+            width: 40%;
+            font-size: 1rem;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+        a {
+            @include signupBtn(#00b8d9, #00b8d9, white);
+            width: 20%;
+            padding: 0.5rem 3rem;
+            font-weight: 600;
+        }
+    }
+}
+
+
+@media screen and (max-width: 910px) {
+    .homeHeader {
+        justify-content: center;
+        div {
+            width: 90%;
+            
+        }
+    }
+    .product {
+        div {
+            width: 90%;
+        }
+        .boardImg {
+            width: 90%;
+        }
+    }
+    .featuresSection {
+        padding: 3rem 2rem;
+
+        .feature {
+            div {
+                width: 75%;
+                text-align: center;
+            }
+            img {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .homeHeader {
+        align-items: center;
+        height: 75vh;
+
+        div {
+            width: 100%;
+            
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .product {
+        .companyImg {
+            width: 75%;
         }
         p {
+            padding: 0;
+        }
+    }
+    .featuresSection {
+        .feature {
+            flex-direction: column;
+            align-items: center;
+         
+            div {
+                width: 90%;
+                text-align: center;
+            }
+            img {
+                width: 75%;
+            }
+        }
+    }
+
+    .signUpContainer {
+        div {
+            width: 100%;
+            input {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .homePage {
+        h2 {
             font-size: 1.5rem;
         }
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .homeHeader {
+        padding: 6rem 3rem 4rem;
+
+        div {
+            text-align: center;
+        }
+    }
+
+    .product {
+        .boardImg {
+            display: none;
+        }
+        .companyImg {
+            width: 90%;
+        }
+    }
+
+    .featuresSection {
+        padding: 3rem 1rem;
     }
 }
