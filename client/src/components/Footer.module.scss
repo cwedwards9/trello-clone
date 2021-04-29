@@ -1,0 +1,39 @@
+.footer {
+    background-color: #f8f8f8;
+    padding: 2rem 0;
+    
+    select {
+        display: block;
+        margin: 0 auto;
+        padding: 0.5rem;
+        font-size: 1rem;
+        color: #959DA1;
+        background-color: rgba(255,255,255,0.5);
+        border: 2px solid #EDEFF0;
+        width: 150px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding: 0;
+        margin: 1.25rem;
+
+        li {
+            margin: 0 0.5rem 0.5rem;
+            color: #8993A4;
+            text-decoration: underline;
+            font-size: 0.90rem;
+            cursor: pointer;
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        color: #091e42;
+        font-size: 0.90rem;
+        margin: 0;
+    }
+}
