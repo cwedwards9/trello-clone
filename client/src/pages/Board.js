@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import useInputState from "../hooks/useInputState";
@@ -57,7 +58,9 @@ export default function Board() {
     }
 
     return (
-        <div className={boardStyles.boardPage}>
+        <>
+        <Navbar />
+        <div className={boardStyles.boardPage} style={{backgroundImage: `url(${boardInfo.bgImage})`}}>
         <header className={boardStyles.boardHeader}>
             <h1>{boardInfo.name}</h1>
             { isStarred ? <button style={{ color: "yellow"}} onClick={toggleBoardStarStatus}><AiFillStar /></button> 
@@ -65,7 +68,7 @@ export default function Board() {
             }
             <Link to="/board-settings" className={boardStyles.settingsLink}>Board Settings</Link>
         </header>
-        <main className={boardStyles.mainBoard} style={{backgroundImage: `url(${boardInfo.bgImage})`}}>
+        <main className={boardStyles.mainBoard} >
             {listArray.map(list => (
                 <List 
                     key={list.id}
@@ -76,7 +79,7 @@ export default function Board() {
 
             <section className={boardStyles.addListForm}>
                 <form onSubmit={createList}>
-                    <input value={newListTitle} onChange={updateListTitle} onFocus={toggleAddListBtn} placeholder="+ Add another list" />
+                    <input value={newListTitle} onChange={updateListTitle} onFocus={toggleAddListBtn} placeholder="+ Add a list" />
                     {
                         addListBtn ?
                             <button>Add List</button>
@@ -87,5 +90,6 @@ export default function Board() {
             </section>
         </main>
         </div>
+        </>
     );
 };

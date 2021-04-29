@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
 import NewBoardModal from "../components/NewBoardModal";
 import useToggle from "../hooks/useToggle";
 import { Link } from "react-router-dom";
@@ -28,6 +29,8 @@ export default function Dashboard() {
     }
 
     return (
+        <>
+        <Navbar />
         <div className={dashStyles.dashboard}>
             <main className={dashStyles.dashMain}>
                 <header>
@@ -43,7 +46,7 @@ export default function Dashboard() {
                     {boardsList && boardsList.map(d => (
                         d.isStarred ?
                         <div key={d.id} style={{backgroundImage: `url(${d.bgImage})`}}>
-                            <Link to={`/board/${d.id}`} className={dashStyles.boardLink}>{d.name}</Link>
+                            <a href={`/board/${d.id}`} className={dashStyles.boardLink}>{d.name}</a>
                         </div>
                         : null
                     ))}
@@ -55,7 +58,7 @@ export default function Dashboard() {
                     <div className={dashStyles.dashboardBoards}>
                     {boardsList.map(d => (
                         <div key={d.id} style={{backgroundImage: `url(${d.bgImage})`}}>
-                            <Link to={`/board/${d.id}`} className={dashStyles.boardLink}>{d.name}</Link>
+                            <a href={`/board/${d.id}`} className={dashStyles.boardLink}>{d.name}</a>
                         </div>
                     ))}
                         <button onClick={toggleModal} className={dashStyles.createBoardBtn}><HiPlusSm /> Create Board</button>
@@ -66,10 +69,10 @@ export default function Dashboard() {
             <aside className={dashStyles.sidebar}>
                 <ul>
                     <div>
-                        <li><Link to="/dashboard" className={dashStyles.sideLink}><RiTrelloFill /> Boards</Link></li>
-                        <li className={dashStyles.sideLink}><button onClick={toggleModal}><HiPlusSm /> Create Board</button></li>
+                        <li><Link to="/dashboard" className={dashStyles.sideLink}><RiTrelloFill className={dashStyles.icon} /> Boards</Link></li>
+                        <li><button onClick={toggleModal}><HiPlusSm className={dashStyles.icon} /> Create Board</button></li>
                     </div>
-                    <li><Link to="/board-settings" className={dashStyles.sideLink}><IoSettingsSharp /> Board Settings</Link></li>
+                    <li><a href="/board-settings" className={dashStyles.sideLink}><IoSettingsSharp className={dashStyles.icon} /> Board Settings</a></li>
                 </ul>
             </aside>
 
@@ -77,10 +80,10 @@ export default function Dashboard() {
                 <NewBoardModal
                     toggleModal={toggleModal}
                     createBoard={createBoard}
-                    
                 />
                 : null
             }
         </div>
+        </>
     );
 };

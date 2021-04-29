@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
 import BoardEdit from "../components/BoardEdit";
 import axios from "axios";
 import settingsStyles from "./BoardSettings.module.scss";
@@ -36,6 +37,8 @@ export default function BoardSettings() {
     }
 
     return (
+        <>
+        <Navbar />
         <div className={settingsStyles.settingsContainer}>
             <header className={settingsStyles.settingsHeader}>
                 <h1>Board Settings</h1>
@@ -44,7 +47,8 @@ export default function BoardSettings() {
             </header>
             <main className={settingsStyles.boardSettingsList}>
                 {boardsList.map(b => (
-                    <BoardEdit 
+                    <BoardEdit
+                        key={b.id}
                         boardInfo={b} 
                         deleteBoard={deleteBoard}
                         updateBoard={updateBoard}
@@ -52,5 +56,6 @@ export default function BoardSettings() {
                 ))}
             </main>
         </div>
+        </>
     );
 };
