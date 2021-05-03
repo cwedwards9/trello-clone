@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const userRoutes = require("./routes/users");
 const boardRoutes = require("./routes/boards");
 const listRoutes = require("./routes/lists");
@@ -28,6 +29,10 @@ app.use("/api", boardRoutes);
 app.use("/api", listRoutes);
 app.use("/api", cardRoutes);
 app.use("/api", imagesRoute);
+
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
 
 
 // Require database models
