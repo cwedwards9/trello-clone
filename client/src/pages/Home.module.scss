@@ -24,34 +24,41 @@
 
 
 .homeHeader {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 6rem 5rem 4rem;
-    height: calc(100vh - 10rem);
+    padding: 3.5rem 0 0;
+    height: calc(100vh - 3.5rem);
     background-image: url(../images/home-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    div {
-        width: 50%;
+
+    .headerLayer {
+        width: 100%;
         height: 100%;
-        color: rgb(78, 103, 245);
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    
+    .headerContent {
+        padding: 3rem;
+        width: 50%;
+        color: white;
         
         h1 {
             font-size: 2.75rem;
             margin: 0 0 0.5rem;
         }
 
+        p {
+            font-size: 1.5rem;
+        }
+
         a {
             @include signupBtn(#0065ff, #0065ff, white);
             width: 35%;
             padding: 0.5rem 1.5rem;
-            
-            &:hover {
-                opacity: 0.85;
-            }
+            text-shadow: none;
         }
     }
 }
@@ -159,9 +166,10 @@
 @media screen and (max-width: 910px) {
     .homeHeader {
         justify-content: center;
-        div {
+
+        .headerContent {
             width: 90%;
-            
+            padding: 3rem;
         }
     }
     .product {
@@ -176,12 +184,16 @@
         padding: 3rem 2rem;
 
         .feature {
+            padding-bottom: 3rem;
+
             div {
                 width: 75%;
                 text-align: center;
+                order: 2;
             }
             img {
                 width: 60%;
+                order: 1;
             }
         }
     }
@@ -192,14 +204,15 @@
         align-items: center;
         height: 75vh;
 
-        div {
+        .headerContent {
             width: 100%;
-            
+
             h1 {
-                font-size: 2rem;
+                font-size: 2.25rem;
             }
+    
             p {
-                font-size: 1rem;
+                font-size: 1.25rem;
             }
         }
     }
@@ -248,10 +261,20 @@
     }
 
     .homeHeader {
-        padding: 6rem 3rem 4rem;
-
-        div {
+        .headerLayer {
+            align-items: center;
+        }
+        .headerContent {
+            padding: 1.25rem;
             text-align: center;
+
+            h1 {
+                font-size: 2rem;
+            }
+    
+            p {
+                font-size: 1rem;
+            }
         }
     }
 

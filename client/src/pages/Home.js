@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from 'react-reveal/Fade';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
@@ -14,14 +15,17 @@ export default function Home() {
         <>
         <Navbar />
         <div className={homeStyles.homePage}>
+            <Fade>
             <header className={homeStyles.homeHeader}>
-                <div>
+            <div className={homeStyles.headerLayer}>
+                <div className={homeStyles.headerContent}>
                     <h1>Trellolo helps move your project forward.</h1>
                     <p>Manage projects and reach new productivity peaks. From high rises to the home office, the way
                         your team works is unique—accomplish it all with Trellolo.
                     </p>
                     <Link to="/signup">Sign up - It's free!</Link>
                 </div>
+            </div>
             </header>
 
             <section className={homeStyles.product}>
@@ -82,6 +86,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            </Fade>
             <Footer />
         </div>
         </>
