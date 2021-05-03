@@ -15,7 +15,7 @@ export default function Login(props) {
 
         axios.post("/api/login", { email: email, password: password })
             .then((res) => {
-                sessionStorage.setItem("user", JSON.stringify(res.data.userSession));
+                sessionStorage.setItem("user", JSON.stringify(res.data.user));
                 props.routeProps.history.push("/dashboard");
             })
             .catch(error => {

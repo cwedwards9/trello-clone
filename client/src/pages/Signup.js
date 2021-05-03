@@ -18,17 +18,16 @@ export default function Signup(props) {
         if(password !== passwordConfirm) {
             setSignupMsg("Your passwords do not match!")
         } else {
-        axios.post("/api/register", { email: email, password: password, name: name })
-            .then((res) => {
-                console.log(res);
-                sessionStorage.setItem("user", JSON.stringify(res.data.userSession));
-                props.routeProps.history.push("/dashboard");
-            })
-            .catch(error => {
-                setSignupMsg(error.response.data);
-                resetPassword();
-                resetPasswordConfirm();
-            })
+            axios.post("/api/register", { email: email, password: password, name: name })
+                .then((res) => {
+                    sessionStorage.setItem("user", JSON.stringify(res.data.user));
+                    props.routeProps.history.push("/dashboard");
+                })
+                .catch(error => {
+                    setSignupMsg(error.response.data);
+                    resetPassword();
+                    resetPasswordConfirm();
+                })
         }
     }
 
