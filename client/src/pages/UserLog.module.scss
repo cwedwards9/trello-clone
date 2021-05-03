@@ -1,5 +1,5 @@
 .userLogPage {
-    padding: 4rem 0 2rem;
+    padding: 3rem 0 2rem;
 }
 
 .logoName {
@@ -19,7 +19,7 @@
 .formContainer {
     width: 25%;
     margin: 0 auto;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem;
     border-radius: 6px;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 
@@ -53,13 +53,23 @@
         border-radius: 6px;
         cursor: pointer;
     }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     a {
-        font-size: 0.85rem;
+        font-size: 0.80rem;
+        text-decoration: none;
         color: #0052CC;
-        display: block;
+        display: inline;
         text-align: center;
-        margin: 1.5rem 0 1rem;
+        margin: 1rem 0.35rem;
+    }
+    a:hover {
+        text-decoration: underline;
     }
 }
 
@@ -90,7 +100,7 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 575px) {
     .formContainer {
         width: 50%;
     }
@@ -98,6 +108,7 @@
 
 @media screen and (max-width: 400px) {
     .formContainer {
-        width: 70%;
+        width: 75%;
+        box-shadow: none;
     }
 }
