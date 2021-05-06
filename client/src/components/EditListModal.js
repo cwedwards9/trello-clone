@@ -10,7 +10,7 @@ export default function EditListModal(props) {
         <div className={editListStyles.listEditModal}>
             <div>
                 <h3>List Actions</h3>
-                <button onClick={props.toggleListModal} className={editListStyles.listModalExit}><ImCross /></button>
+                <button aria-label="Close" onClick={props.toggleListModal} className={editListStyles.listModalExit}><ImCross /></button>
             </div>
             <hr />
             <ul>

@@ -37,7 +37,6 @@ export default function List(props) {
         axios.put("/api/cards", { id: cardId, ListId: props.list.id })
             .then((response) => {
                 // setListCards([...listCards, response.data]);
-                console.log(response)
             })
     }
 
@@ -93,7 +92,7 @@ export default function List(props) {
                     addCardBtn ?
                         <div>
                             <button>Add Card</button>
-                            <button type="button" onClick={toggleAddCardBtn}><FaWindowMinimize /> </button>
+                            <button aria-label="Collapse" type="button" onClick={toggleAddCardBtn}><FaWindowMinimize /> </button>
                         </div>
                     :
                         null
