@@ -15,7 +15,7 @@ export default function Navbar() {
         const user = sessionStorage.getItem("user");
         if(user) setIsLoggedIn(true);
         else setIsLoggedIn(false);
-    });
+    }, []);
 
     const handleLogout = async () => {
         await axios.get("/api/logout");
@@ -27,7 +27,7 @@ export default function Navbar() {
     if(isLoggedIn) {
         return (
             <nav className={styles.navbar}>
-                <NavLink exact to="/" className={`${styles.navLink} ${styles.brandName}`}><ImTrello /> Trellolo</NavLink>
+                <NavLink exact to="/" className={`${styles.navLink} ${styles.brandName}`}><ImTrello /> <span className={styles.linkText}>Trellolo</span></NavLink>
                 <ul>
                     <li>
                         <NavLink exact to="/dashboard" className={styles.navLink}><RiDashboardLine className={styles.icon} /> Dashboard</NavLink>
@@ -42,7 +42,7 @@ export default function Navbar() {
     else {
         return (
             <nav className={styles.navbar}>
-                <NavLink exact to="/" className={`${styles.navLink} ${styles.brandName}`}><ImTrello /> Trellolo</NavLink>
+                <NavLink exact to="/" className={`${styles.navLink} ${styles.brandName}`}><ImTrello /> <span className={styles.linkText}>Trellolo</span></NavLink>
                 <ul>
                     <li>
                         <NavLink exact to="/login" activeClassName={styles.activeLink} className={styles.navLink}><BiLogIn className={styles.icon} /> Log In</NavLink>

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 55px;
+    height: 3.5rem;
     padding: 0 1.5rem;
     background-color: #026AA7;
     z-index: 1000;
@@ -47,4 +47,10 @@
 .icon {
     position: relative;
     top: 2px;
+}
+
+@media screen and (max-width: 400px) {
+    .linkText {
+        display: none;
+    }
 }
