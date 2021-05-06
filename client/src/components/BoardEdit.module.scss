@@ -4,6 +4,7 @@
     min-height: 175px;
     padding: 0.5rem 1rem;
     background-color: white;
+    opacity: 0.90;
     box-shadow: 0 19px 35px rgba(0, 0, 0, 0.2), 0 15px 8px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     background-position: center;
@@ -100,6 +101,7 @@
             cursor: pointer;
             background-color: transparent;
             border: none;
+            color: black;
         }
     }
 
@@ -161,9 +163,9 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     %boardSettingsContainer {
-        width: 100%;
+        width: 80%;
     }
     .deleteBoardModal {
         width: 45%;
@@ -171,6 +173,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    %boardSettingsContainer {
+        width: 100%;
+        box-sizing: border-box;
+    }
     .deleteBoardModal {
         width: 60%;
     }
