@@ -49,7 +49,7 @@ export default function BoardEdit(props) {
                 </div>
                 <div className={boardEditStyles.boardSettingsInfo}>
                     <p>{description}</p>
-                    <p>Last updated: {dateFormat(updatedAt, "fullDate")}</p>
+                    <p>Created on {dateFormat(updatedAt, "fullDate")}</p>
                 </div>
             </section>
         }

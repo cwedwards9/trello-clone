@@ -14,7 +14,7 @@ export default function Footer() {
                     <li key={link}>{link}</li>
                 ))}
             </ul>
-            <p class={footerStyles.copyright}>
+            <p className={footerStyles.copyright}>
                 © Copyright 2021. All rights reserved. Created by Chase.
             </p>
         </footer>
