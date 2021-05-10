@@ -2,7 +2,6 @@
     background-color: #FFFFFF;
     padding: 0.5rem;
     border-radius: 4px;
-    margin-bottom: 0.5rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
@@ -14,11 +13,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 0.25rem 0.5rem 0;
     @extend %cardContainer;
 
     p {
         margin: 0;
-        font-size: 1rem;
+        font-size: 14px;
     }
 
     button {
@@ -41,6 +41,7 @@
         border: 1px solid #61BD4F;
         width: 100%;
         box-sizing: border-box;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -59,5 +60,5 @@
 }
 
 .cardCancelBtn {
-    @include cardBtn(#E35D6A);
+    @include cardBtn(gray);
 }
