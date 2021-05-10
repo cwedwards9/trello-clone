@@ -72,7 +72,7 @@ export default function List(props) {
                     :
                     <>
                         <h3>{listTitle}</h3>
-                        <button onClick={toggleListModal}><BsThreeDots /></button>
+                        <button className={listStyles.listOptionsBtn} onClick={toggleListModal}><BsThreeDots /></button>
                     </>
                 }
                 
@@ -86,7 +86,7 @@ export default function List(props) {
                 ))}
             </div>
             
-            <form onSubmit={createCard} className={listStyles.newCardForm}>
+            <form onSubmit={createCard} className={listStyles.newCardForm} autocomplete="off">
                 <input value={newCardDesc} onChange={updateCardDesc} onFocus={toggleAddCardBtn} placeholder="+ Add another card" id={`newCardInput-${props.list.id}`} />
                 {
                     addCardBtn ?
