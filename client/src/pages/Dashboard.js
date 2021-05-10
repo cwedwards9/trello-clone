@@ -15,10 +15,15 @@ export default function Dashboard() {
     const [boardsList, setBoardsList] = useState([]);
 
     useEffect(() => {
+        // If a user is not signed in (sessionStorage) redirect them to login
+        const user = sessionStorage.getItem("user");
+        if(!user) window.location.replace("/login");
+
         axios.get("/api/boards")
             .then(response => {
                 setBoardsList(response.data.boardData);
             })
+
     }, [setBoardsList]);
 
     const createBoard = (boardInfo) => {
