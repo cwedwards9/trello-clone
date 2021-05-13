@@ -29,7 +29,7 @@ module.exports = {
         if(!user) return res.status(409).json("Username or password is incorrect!"); 
         req.logIn(user, error => {
           if(error) return res.status(500).json("Oh no, something went wrong");
-          return res.json({ userSession: req.user }); 
+          return res.json({ user: { id: req.user.id, name: req.user.name } });
         })
       })(req, res, next);
     },
